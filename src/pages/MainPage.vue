@@ -89,7 +89,10 @@ export default {
   methods: {
     async getSeriesNow(){
       const date = new Date()
-      const strDate = date.toISOString().split("T")[0]
+      const y = date.getUTCFullYear()
+      const m = date.getUTCMonth() + 1
+      const d = date.getUTCDay()
+      const strDate = `${y}-${m}-${d}`
       const response = await axios.get(
           `http://${process.env.VUE_APP_HOST_SERVER}:${process.env.VUE_APP_PORT_SERVER}/v1/points/${this.selectZone}/${this.selectType}/${strDate}/all_series`
 
