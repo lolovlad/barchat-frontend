@@ -103,7 +103,7 @@ export default {
     async dateNow(){
       clearInterval(this.seriesNow)
       await this.getSeriesNow()
-      this.seriesNow = setInterval(this.getSeriesNow, 1000)
+      this.seriesNow = setInterval(this.getSeriesNow, 3000)
     },
     async searchDate(date){
       if(this.seriesNow != null)
